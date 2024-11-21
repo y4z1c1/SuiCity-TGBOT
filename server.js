@@ -20,50 +20,29 @@ app.post("/webhook", async (req, res) => {
   const chatId = message.chat.id;
   const text = message.text;
 
-  // Only process commands (e.g., /start)
-  if (text && text.startsWith("/start")) {
+  // Check if the message is the /start command
+  if (text.startsWith("/start")) {
+    // Extract the start_param
+    const startParam = text.split(" ")[1]; // Gets "index_123_telegram_456"
+
+    // Replace YOUR_WEBAPP_URL with the actual URL of your Telegram WebApp
+    const webAppUrl = `https://striking-friendly-mako.ngrok-free.app/?start=${startParam}`;
+
     try {
-      // Extract arguments from /start command
-      const args = text.split(" ")[1];
-      if (args) {
-        const [nftIndex, inviterId] = args.split("_");
-        await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
-          chat_id: chatId,
-          text: `You were invited by NFT #${nftIndex} from Telegram ID ${inviterId}!`,
-        });
-      } else {
-        await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
-          chat_id: chatId,
-          text: "Welcome to the bot! Use the invite link to get started.",
-        });
-      }
+      // Send the WebApp link back to the user
+      await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
+        chat_id: chatId,
+        text: `Click the link to open the app: ${webAppUrl}`,
+        reply_markup: {
+          inline_keyboard: [[{ text: "Open WebApp", url: webAppUrl }]],
+        },
+      });
     } catch (error) {
-      console.error("Error processing /start command:", error.response.data);
+      console.error("Error sending message:", error.response.data);
     }
   }
 
-  // Respond with status 200 regardless of the message
   res.sendStatus(200);
-});
-
-// Endpoint to send custom messages (optional, for manual admin tasks)
-app.get("/send-message", async (req, res) => {
-  const { chatId, text } = req.query;
-
-  if (!chatId || !text) {
-    return res.status(400).send("chatId and text are required");
-  }
-
-  try {
-    const response = await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
-      chat_id: chatId,
-      text: text,
-    });
-    res.send(`Message sent: ${response.data.result.text}`);
-  } catch (error) {
-    console.error(error.response.data);
-    res.status(500).send("Failed to send message");
-  }
 });
 
 app.listen(PORT, () => {
