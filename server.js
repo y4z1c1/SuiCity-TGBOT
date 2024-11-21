@@ -20,20 +20,33 @@ app.post("/webhook", async (req, res) => {
   const chatId = message.chat.id;
   const text = message.text;
 
-  try {
-    // Echo the message
-    await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
-      chat_id: chatId,
-      text: `You said: ${text}`,
-    });
-  } catch (error) {
-    console.error("Error sending message:", error.response.data);
+  // Only process commands (e.g., /start)
+  if (text && text.startsWith("/start")) {
+    try {
+      // Extract arguments from /start command
+      const args = text.split(" ")[1];
+      if (args) {
+        const [nftIndex, inviterId] = args.split("_");
+        await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
+          chat_id: chatId,
+          text: `You were invited by NFT #${nftIndex} from Telegram ID ${inviterId}!`,
+        });
+      } else {
+        await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
+          chat_id: chatId,
+          text: "Welcome to the bot! Use the invite link to get started.",
+        });
+      }
+    } catch (error) {
+      console.error("Error processing /start command:", error.response.data);
+    }
   }
 
+  // Respond with status 200 regardless of the message
   res.sendStatus(200);
 });
 
-// Endpoint to send custom messages
+// Endpoint to send custom messages (optional, for manual admin tasks)
 app.get("/send-message", async (req, res) => {
   const { chatId, text } = req.query;
 
