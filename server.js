@@ -12,7 +12,6 @@ const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}`;
 // Middleware
 app.use(bodyParser.json());
 
-// Endpoint for Telegram Webhook
 app.post("/webhook", async (req, res) => {
   const message = req.body.message;
   if (!message) return res.sendStatus(200);
@@ -20,25 +19,35 @@ app.post("/webhook", async (req, res) => {
   const chatId = message.chat.id;
   const text = message.text;
 
-  // Check if the message is the /start command
+  // Check for the /start command
   if (text.startsWith("/start")) {
-    // Extract the start_param
-    const startParam = text.split(" ")[1]; // Gets "index_123_telegram_456"
+    // Extract the parameters from the start command
+    const startParam = text.split(" ")[1]; // Get everything after "/start"
+    const [_, nftIndex, telegramId] = startParam.split("_");
 
-    // Replace YOUR_WEBAPP_URL with the actual URL of your Telegram WebApp
-    const webAppUrl = `https://striking-friendly-mako.ngrok-free.app/?start=${startParam}`;
+    // Customize the message to the user
+    const messageText = `SuiCity: Play-2-Earn\n\nYou were invited by NFT #${nftIndex} from Telegram ID ${telegramId}!\nTap the button below to open the app and join the game.`;
 
     try {
-      // Send the WebApp link back to the user
+      // Send a message with a WebApp button
       await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
         chat_id: chatId,
-        text: `Click the link to open the app: ${webAppUrl}`,
+        text: messageText,
         reply_markup: {
-          inline_keyboard: [[{ text: "Open WebApp", url: webAppUrl }]],
+          inline_keyboard: [
+            [
+              {
+                text: "Open WebApp",
+                web_app: {
+                  url: "https://striking-friendly-mako.ngrok-free.app",
+                },
+              },
+            ],
+          ],
         },
       });
     } catch (error) {
-      console.error("Error sending message:", error.response.data);
+      console.error("Error sending WebApp button:", error.response.data);
     }
   }
 
