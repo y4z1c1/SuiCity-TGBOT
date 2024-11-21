@@ -30,7 +30,7 @@ app.post("/webhook", async (req, res) => {
         const messageText = `SuiCity: Play-2-Earn\n\nYou were invited by NFT #${nftIndex} from Telegram ID ${telegramId}!\nTap the button below to open the app.`;
 
         // Generate the startapp link
-        const startAppLink = `https://t.me/${BOT_USERNAME}/appname?startapp=${nftIndex}__${telegramId}`;
+        const startAppLink = `https://t.me/${BOT_USERNAME}/?startapp=${nftIndex}__${telegramId}`;
 
         // Send a message with the startapp button
         await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
