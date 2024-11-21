@@ -23,31 +23,43 @@ app.post("/webhook", async (req, res) => {
   if (text.startsWith("/start")) {
     // Extract the parameters from the start command
     const startParam = text.split(" ")[1]; // Get everything after "/start"
-    const [_, nftIndex, telegramId] = startParam.split("_");
 
-    // Customize the message to the user
-    const messageText = `SuiCity: Play-2-Earn\n\nYou were invited by NFT #${nftIndex} from Telegram ID ${telegramId}!\nTap the button below to open the app and join the game.`;
+    if (startParam) {
+      try {
+        const [_, nftIndex, telegramId] = startParam.split("_");
 
-    try {
-      // Send a message with a WebApp button, including parameters in the URL
+        // Customize the message to the user
+        const messageText = `SuiCity: Play-2-Earn\n\nYou were invited by NFT #${nftIndex} from Telegram ID ${telegramId}!\nTap the button below to open the app and join the game.`;
+
+        // Send a message with a WebApp button, including parameters in the URL
+        await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
+          chat_id: chatId,
+          text: messageText,
+          reply_markup: {
+            inline_keyboard: [
+              [
+                {
+                  text: "Play",
+                  web_app: {
+                    url: `https://striking-friendly-mako.ngrok-free.app/?nftIndex=${nftIndex}&telegramId=${telegramId}`, // Include parameters here
+                  },
+                },
+              ],
+            ],
+          },
+        });
+      } catch (error) {
+        console.error(
+          "Error processing startParam or sending WebApp button:",
+          error
+        );
+      }
+    } else {
+      // If no parameters are provided after /start, send a default response
       await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
         chat_id: chatId,
-        text: messageText,
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: "Play",
-                web_app: {
-                  url: `https://striking-friendly-mako.ngrok-free.app/?nftIndex=${nftIndex}&telegramId=${telegramId}`, // Include parameters here
-                },
-              },
-            ],
-          ],
-        },
+        text: "Welcome to SuiCity: Play-2-Earn!\nTo get started, please use a valid invite link.",
       });
-    } catch (error) {
-      console.error("Error sending WebApp button:", error.response.data);
     }
   }
 
