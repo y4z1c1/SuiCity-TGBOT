@@ -29,7 +29,7 @@ app.post("/webhook", async (req, res) => {
     const messageText = `SuiCity: Play-2-Earn\n\nYou were invited by NFT #${nftIndex} from Telegram ID ${telegramId}!\nTap the button below to open the app and join the game.`;
 
     try {
-      // Send a message with a WebApp button
+      // Send a message with a WebApp button, including parameters in the URL
       await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
         chat_id: chatId,
         text: messageText,
@@ -37,9 +37,9 @@ app.post("/webhook", async (req, res) => {
           inline_keyboard: [
             [
               {
-                text: "Open WebApp",
+                text: "Play",
                 web_app: {
-                  url: "https://striking-friendly-mako.ngrok-free.app",
+                  url: `https://striking-friendly-mako.ngrok-free.app/?nftIndex=${nftIndex}&telegramId=${telegramId}`, // Include parameters here
                 },
               },
             ],
