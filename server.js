@@ -13,6 +13,9 @@ const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}`;
 // Middleware
 app.use(bodyParser.json());
 
+// In-memory store to track registered users
+const registeredUsers = new Set();
+
 app.post("/webhook", async (req, res) => {
   const message = req.body.message;
   if (!message) return res.sendStatus(200);
@@ -24,18 +27,18 @@ app.post("/webhook", async (req, res) => {
     const startParam = text.split(" ")[1]; // Extract the parameter after "/start"
 
     try {
-      // Send the initial welcome message
-      await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
-        chat_id: chatId,
-        text: "Welcome to SuiCity! 🎉\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
-      });
+      // Send the welcome message only if the user is not already registered
+      if (!registeredUsers.has(chatId)) {
+        registeredUsers.add(chatId); // Mark the user as registered
 
-      // Add an image to the /start message
-      await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
-        chat_id: chatId,
-        photo: "https://suicityp2e.com/logo.webp", // Replace with your image URL
-        caption: "🎨 Explore your city and earn rewards in SuiCity!",
-      });
+        // Combined welcome message with an image
+        await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
+          chat_id: chatId,
+          photo: "https://suicityp2e.com/logo.webp", // Replace with your welcome image URL
+          caption:
+            "🎉 Welcome to SuiCity!\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
+        });
+      }
 
       if (startParam) {
         // Parse the "start" parameter
@@ -53,10 +56,11 @@ app.post("/webhook", async (req, res) => {
           // Generate the startapp link
           const startAppLink = `https://t.me/${BOT_USERNAME}?startapp=${nftIndex}__${telegramId}`;
 
-          // Send a message with the startapp button
-          await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
+          // Send an invite message with a different image
+          await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
             chat_id: chatId,
-            text: messageText,
+            photo: "https://suicityp2e.com/invite-image.webp", // Replace with your invite-specific image URL
+            caption: messageText,
             reply_markup: {
               inline_keyboard: [
                 [
