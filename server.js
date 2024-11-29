@@ -33,7 +33,7 @@ app.post("/webhook", async (req, res) => {
       // Add an image to the /start message
       await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
         chat_id: chatId,
-        photo: "https://example.com/path/to/your/image.jpg", // Replace with your image URL
+        photo: "https://suicityp2e.com/logo.webp", // Replace with your image URL
         caption: "🎨 Explore your city and earn rewards in SuiCity!",
       });
 
@@ -48,7 +48,7 @@ app.post("/webhook", async (req, res) => {
           const nftIndex = params[1]; // Extract NFT index
           const telegramId = params[3]; // Extract Telegram ID
 
-          const messageText = `SuiCity: Play-2-Earn\n\nYou were invited by NFT #${nftIndex} from Telegram ID ${telegramId}!\nTap the button below to open the app.`;
+          const messageText = `SuiCity: Play-2-Earn\n\nYou were invited by NFT #${nftIndex}!\nTap the button below to open the app.`;
 
           // Generate the startapp link
           const startAppLink = `https://t.me/${BOT_USERNAME}?startapp=${nftIndex}__${telegramId}`;
