@@ -59,7 +59,8 @@ app.post("/webhook", async (req, res) => {
           // Send an invite message with a different image
           await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
             chat_id: chatId,
-            photo: "https://suicityp2e.com/invite-image.webp", // Replace with your invite-specific image URL
+            photo:
+              "https://bafybeiahevtcpw4pxgklnglmoayfoer3asgha6ajk3pxbu35g4npwb54ey.ipfs.w3s.link/acc1.webp", // Replace with your invite-specific image URL
             caption: messageText,
             reply_markup: {
               inline_keyboard: [
