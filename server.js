@@ -23,8 +23,21 @@ app.post("/webhook", async (req, res) => {
   if (text.startsWith("/start")) {
     const startParam = text.split(" ")[1]; // Extract the parameter after "/start"
 
-    if (startParam) {
-      try {
+    try {
+      // Send the initial welcome message
+      await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
+        chat_id: chatId,
+        text: "Welcome to SuiCity! 🎉\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
+      });
+
+      // Add an image to the /start message
+      await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
+        chat_id: chatId,
+        photo: "https://example.com/path/to/your/image.jpg", // Replace with your image URL
+        caption: "🎨 Explore your city and earn rewards in SuiCity!",
+      });
+
+      if (startParam) {
         // Parse the "start" parameter
         const params = startParam.split("_");
         if (
@@ -62,18 +75,18 @@ app.post("/webhook", async (req, res) => {
             text: "Invalid invite link. Please use a valid invite link to start the game.",
           });
         }
-      } catch (error) {
-        console.error("Error handling /start:", error);
+      } else {
+        // No parameter after "/start"
         await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
           chat_id: chatId,
-          text: "An error occurred. Please try again later.",
+          text: "Welcome to SuiCity! Use a valid invite link to start.",
         });
       }
-    } else {
-      // No parameter after "/start"
+    } catch (error) {
+      console.error("Error handling /start:", error);
       await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
         chat_id: chatId,
-        text: "Welcome to SuiCity! Use a valid invite link to start.",
+        text: "An error occurred. Please try again later.",
       });
     }
   }
