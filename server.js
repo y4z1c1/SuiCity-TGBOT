@@ -35,7 +35,7 @@ app.post("/webhook", async (req, res) => {
         await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
           chat_id: chatId,
           photo:
-            "https://bafybeicgud3ti3gtorwpecxseipjqvkl5jpkyfo6epfe545qir5qiidyea.ipfs.w3s.link/telegram-initial-2.webp", // Replace with your welcome image URL
+            "https://bafybeidade56fa5ljwfxb4wyk46cv3topggduji3rsuabelzzub6ia5s6e.ipfs.w3s.link/telegram-initial-3.webp", // Replace with your welcome image URL
           caption:
             "🎉 Welcome to SuiCityP2E!\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
           reply_markup: {
@@ -106,7 +106,7 @@ app.post("/webhook", async (req, res) => {
         await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
           chat_id: chatId,
           photo:
-            "https://bafybeicgud3ti3gtorwpecxseipjqvkl5jpkyfo6epfe545qir5qiidyea.ipfs.w3s.link/telegram-initial-2.webp", // Replace with your welcome image URL
+            "https://bafybeidade56fa5ljwfxb4wyk46cv3topggduji3rsuabelzzub6ia5s6e.ipfs.w3s.link/telegram-initial-3.webp", // Replace with your welcome image URL
           caption:
             "🎉 Welcome to SuiCityP2E!\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
           reply_markup: {
