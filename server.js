@@ -35,7 +35,7 @@ app.post("/webhook", async (req, res) => {
         await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
           chat_id: chatId,
           photo:
-            "https://bafybeieedmqch5rm6xpwtje4drksrjdbazqdnsrlapr7zrbuwdjccscfyu.ipfs.w3s.link/telegram-initial.webp", // Replace with your welcome image URL
+            "https://bafybeicgud3ti3gtorwpecxseipjqvkl5jpkyfo6epfe545qir5qiidyea.ipfs.w3s.link/telegram-initial-2.webp", // Replace with your welcome image URL
           caption:
             "🎉 Welcome to SuiCityP2E!\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
           reply_markup: {
@@ -44,6 +44,16 @@ app.post("/webhook", async (req, res) => {
                 {
                   text: "Play",
                   url: `https://t.me/${BOT_USERNAME}?startapp=welcome`, // Replace with your app's generic link
+                },
+              ],
+              [
+                {
+                  text: "Follow us on Twitter",
+                  url: "https://twitter.com/SuiCityP2E", // Replace with your Twitter link
+                },
+                {
+                  text: "Join us on Discord",
+                  url: "https://discord.gg/DyBPJJEwAs", // Replace with your Discord link
                 },
               ],
             ],
@@ -71,13 +81,13 @@ app.post("/webhook", async (req, res) => {
           await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
             chat_id: chatId,
             photo:
-              "https://bafybeifioewtdxy25izptnvcegbfmrgyobwhwj5vfz7p4ln7ksm7x7nsby.ipfs.w3s.link/telegram-invite.webp", // Replace with your invite-specific image URL
+              "https://bafybeigeehdqguabym6dwzlr4n4kox7ilrcggqlhjv2g77r3zi2efcgdd4.ipfs.w3s.link/telegram-invite-2.webp", // Replace with your invite-specific image URL
             caption: messageText,
             reply_markup: {
               inline_keyboard: [
                 [
                   {
-                    text: "Play",
+                    text: "Use Invite Link",
                     url: startAppLink, // Use startapp link as URL
                   },
                 ],
@@ -96,7 +106,7 @@ app.post("/webhook", async (req, res) => {
         await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
           chat_id: chatId,
           photo:
-            "https://bafybeieedmqch5rm6xpwtje4drksrjdbazqdnsrlapr7zrbuwdjccscfyu.ipfs.w3s.link/telegram-initial.webp", // Replace with your welcome image URL
+            "https://bafybeicgud3ti3gtorwpecxseipjqvkl5jpkyfo6epfe545qir5qiidyea.ipfs.w3s.link/telegram-initial-2.webp", // Replace with your welcome image URL
           caption:
             "🎉 Welcome to SuiCityP2E!\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
           reply_markup: {
@@ -105,6 +115,16 @@ app.post("/webhook", async (req, res) => {
                 {
                   text: "Play",
                   url: `https://t.me/${BOT_USERNAME}?startapp=welcome`, // Replace with your app's generic link
+                },
+              ],
+              [
+                {
+                  text: "Follow us on Twitter",
+                  url: "https://twitter.com/SuiCityP2E", // Replace with your Twitter link
+                },
+                {
+                  text: "Join us on Discord",
+                  url: "https://discord.gg/DyBPJJEwAs", // Replace with your Discord link
                 },
               ],
             ],
