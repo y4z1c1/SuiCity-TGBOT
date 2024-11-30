@@ -31,12 +31,23 @@ app.post("/webhook", async (req, res) => {
       if (!registeredUsers.has(chatId)) {
         registeredUsers.add(chatId); // Mark the user as registered
 
-        // Combined welcome message with an image
+        // Combined welcome message with an image and Play button
         await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
           chat_id: chatId,
-          photo: "https://suicityp2e.com/logo.webp", // Replace with your welcome image URL
+          photo:
+            "https://bafybeieedmqch5rm6xpwtje4drksrjdbazqdnsrlapr7zrbuwdjccscfyu.ipfs.w3s.link/telegram-initial.webp", // Replace with your welcome image URL
           caption:
-            "🎉 Welcome to SuiCity!\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
+            "🎉 Welcome to SuiCityP2E!\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
+          reply_markup: {
+            inline_keyboard: [
+              [
+                {
+                  text: "Play",
+                  url: `https://t.me/${BOT_USERNAME}?startapp=welcome`, // Replace with your app's generic link
+                },
+              ],
+            ],
+          },
         });
       }
 
@@ -60,7 +71,7 @@ app.post("/webhook", async (req, res) => {
           await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
             chat_id: chatId,
             photo:
-              "https://bafybeiahevtcpw4pxgklnglmoayfoer3asgha6ajk3pxbu35g4npwb54ey.ipfs.w3s.link/acc1.webp", // Replace with your invite-specific image URL
+              "https://bafybeifioewtdxy25izptnvcegbfmrgyobwhwj5vfz7p4ln7ksm7x7nsby.ipfs.w3s.link/telegram-invite.webp", // Replace with your invite-specific image URL
             caption: messageText,
             reply_markup: {
               inline_keyboard: [
@@ -82,9 +93,22 @@ app.post("/webhook", async (req, res) => {
         }
       } else {
         // No parameter after "/start"
-        await axios.post(`${TELEGRAM_API_URL}/sendMessage`, {
+        await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
           chat_id: chatId,
-          text: "Welcome to SuiCity! Use a valid invite link to start.",
+          photo:
+            "https://bafybeieedmqch5rm6xpwtje4drksrjdbazqdnsrlapr7zrbuwdjccscfyu.ipfs.w3s.link/telegram-initial.webp", // Replace with your welcome image URL
+          caption:
+            "🎉 Welcome to SuiCityP2E!\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
+          reply_markup: {
+            inline_keyboard: [
+              [
+                {
+                  text: "Play",
+                  url: `https://t.me/${BOT_USERNAME}?startapp=welcome`, // Replace with your app's generic link
+                },
+              ],
+            ],
+          },
         });
       }
     } catch (error) {
