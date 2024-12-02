@@ -57,7 +57,7 @@ app.post("/webhook", async (req, res) => {
                   },
                   {
                     text: "Join us on Discord",
-                    url: "https://discord.gg/DyBPJJEwAs", // Replace with your Discord link
+                    url: "https://discord.gg/nyPMc9xqXG", // Replace with your Discord link
                   },
                 ],
               ],
