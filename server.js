@@ -72,6 +72,34 @@ app.post("/webhook", async (req, res) => {
           });
           return res.sendStatus(200); // Stop further processing
         }
+      } else {
+        await axios.post(`${TELEGRAM_API_URL}/sendPhoto`, {
+          chat_id: chatId,
+          photo:
+            "https://bafybeidade56fa5ljwfxb4wyk46cv3topggduji3rsuabelzzub6ia5s6e.ipfs.w3s.link/telegram-initial-3.webp", // Replace with your welcome image URL
+          caption:
+            "🎉 Welcome to SuiCityP2E!\nGet ready to explore the ultimate Play-2-Earn experience. 🚀",
+          reply_markup: {
+            inline_keyboard: [
+              [
+                {
+                  text: "Play",
+                  url: `https://t.me/${BOT_USERNAME}?startapp=welcome`, // Replace with your app's generic link
+                },
+              ],
+              [
+                {
+                  text: "Follow us on Twitter",
+                  url: "https://twitter.com/SuiCityP2E", // Replace with your Twitter link
+                },
+                {
+                  text: "Join us on Discord",
+                  url: "https://discord.gg/nyPMc9xqXG", // Replace with your Discord link
+                },
+              ],
+            ],
+          },
+        });
       }
 
       // Send the default welcome message only if no invite parameter is present
