@@ -23,8 +23,8 @@ const ADDRESSES = {
 const limit = pLimit(2);
 
 // Retry parameters
-const MAX_RETRIES = 5;
-const BACKOFF_TIME = 3000; // 3 seconds
+const MAX_RETRIES = 10;
+const BACKOFF_TIME = 1500; // 3 seconds
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
