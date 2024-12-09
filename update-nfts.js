@@ -22,9 +22,9 @@ const ADDRESSES = {
 // Limit concurrency to help prevent 429 errors
 const limit = pLimit(2);
 
-// Retry parameters for handling 429 errors
+// Retry parameters
 const MAX_RETRIES = 5;
-const BACKOFF_TIME = 3000; // 3 seconds delay before retry
+const BACKOFF_TIME = 3000; // 3 seconds
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -204,6 +204,14 @@ async function updateNftFieldsAndWalletIds(collection, provider, users) {
   const results = await Promise.all(
     validUsers.map((user) =>
       limit(async () => {
+        // Only call the blockchain if user is missing nft or walletId
+        if (user.nft && user.walletId) {
+          console.log(
+            `User ${user.walletAddress} already has NFT & walletId, skipping blockchain call.`
+          );
+          return { user, fetchedNft: null };
+        }
+
         const fetchedNft = await fetchNftFromWalletCached(
           provider,
           user.walletAddress,
@@ -218,10 +226,21 @@ async function updateNftFieldsAndWalletIds(collection, provider, users) {
   let walletIdUpdatedCount = 0;
   let nftFieldUpdatedCount = 0;
   for (const { user, fetchedNft } of results) {
-    if (!fetchedNft) {
+    // If we didn't fetch NFT because user already had both NFT & WalletId, no update needed
+    if (!fetchedNft && user.nft && user.walletId) {
       console.log(
-        `No NFT found for user ${user.walletAddress}, skipping update.`
+        `No changes needed for user ${user.walletAddress}. Already up-to-date.`
       );
+      continue;
+    }
+
+    if (!fetchedNft) {
+      // Here, we proved the user doesn't have the NFT (since we tried and didn't find it)
+      // Remove user from the database
+      console.log(
+        `No NFT found for user ${user.walletAddress}, removing user from database.`
+      );
+      await collection.deleteOne({ _id: user._id });
       continue;
     }
 
@@ -323,6 +342,7 @@ async function fetchSityBalance(provider, walletId) {
 }
 
 function formatBalance(balance) {
+  if (balance >= 1e9) return (balance / 1e9).toFixed(2) + "b";
   if (balance >= 1e6) return (balance / 1e6).toFixed(2) + "m";
   if (balance >= 1e3) return (balance / 1e3).toFixed(2) + "k";
   return balance.toFixed(2);
@@ -401,7 +421,7 @@ async function fetchAndStoreBalances(collection, provider) {
   return output;
 }
 
-async function sendEmail(summary) {
+async function sendEmail(summary, runTime) {
   console.log("Preparing to send email...");
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST, // e.g. "smtp.gmail.com"
@@ -427,6 +447,8 @@ Duplicate Wallet Addresses: ${
   }
 Duplicate Telegram IDs: ${summary.duplicateTelegramIds.join(", ") || "None"}
 
+Script Run Time: ${runTime.minutes} minutes and ${runTime.seconds} seconds
+
 Check attached sorted_balances.json for detailed balances report.
 `;
 
@@ -447,6 +469,8 @@ Check attached sorted_balances.json for detailed balances report.
 }
 
 async function main() {
+  const startTime = Date.now();
+
   let refNumberGeneratedCount = 0;
   let walletIdUpdatedCount = 0;
   let nftFieldUpdatedCount = 0;
@@ -545,8 +569,13 @@ async function main() {
       totalSityBalance,
     };
 
+    const endTime = Date.now();
+    const elapsedTimeMs = endTime - startTime;
+    const runMinutes = Math.floor(elapsedTimeMs / 60000);
+    const runSeconds = ((elapsedTimeMs % 60000) / 1000).toFixed(0);
+
     console.log("Sending summary email...");
-    await sendEmail(summary);
+    await sendEmail(summary, { minutes: runMinutes, seconds: runSeconds });
     console.log("Summary email sent successfully!");
   } catch (error) {
     console.error("Error in main execution:", error);
@@ -557,8 +586,6 @@ async function main() {
   }
 }
 
-// If you run in Render cron jobs, just deploy this code in Render and set up a cron job command like:
-// node update-nfts.js
-// at the desired interval (e.g. daily at midnight).
+// Run as needed or set up as a cron job in Render
 
 main().catch(console.error);
