@@ -350,6 +350,7 @@ async function fetchSityBalance(provider, walletId) {
 }
 
 function formatBalance(balance) {
+  if (balance >= 1e12) return (balance / 1e12).toFixed(2) + "t";
   if (balance >= 1e9) return (balance / 1e9).toFixed(2) + "b";
   if (balance >= 1e6) return (balance / 1e6).toFixed(2) + "m";
   if (balance >= 1e3) return (balance / 1e3).toFixed(2) + "k";
@@ -411,7 +412,7 @@ async function fetchAndStoreBalances(collection, provider) {
   console.log("Sorted user balances by descending SITY balance.");
 
   const output = {
-    totalPopulation,
+    totalPopulation: formatBalance(totalPopulation),
     totalSityBalance: formatBalance(totalBalance),
     userBalances,
   };
