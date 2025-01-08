@@ -204,10 +204,10 @@ async function updateNftFieldsAndWalletIds(collection, provider, users) {
   const results = await Promise.all(
     validUsers.map((user) =>
       limit(async () => {
-        // Only call the blockchain if user is missing nft or walletId
-        if (user.nft && user.walletId) {
+        // Check if we need to fetch NFT data (either missing nft, walletId, or nftData)
+        if (user.nft && user.walletId && user.nftData) {
           console.log(
-            `User ${user.walletAddress} already has NFT & walletId, skipping blockchain call.`
+            `User ${user.walletAddress} already has NFT, walletId, and nftData, skipping blockchain call.`
           );
           return { user, fetchedNft: null };
         }
@@ -226,8 +226,8 @@ async function updateNftFieldsAndWalletIds(collection, provider, users) {
   let walletIdUpdatedCount = 0;
   let nftFieldUpdatedCount = 0;
   for (const { user, fetchedNft } of results) {
-    // If we didn't fetch NFT because user already had both NFT & WalletId, no update needed
-    if (!fetchedNft && user.nft && user.walletId) {
+    // If we didn't fetch NFT because user already had all required fields, no update needed
+    if (!fetchedNft && user.nft && user.walletId && user.nftData) {
       console.log(
         `No changes needed for user ${user.walletAddress}. Already up-to-date.`
       );
@@ -255,72 +255,51 @@ async function updateNftFieldsAndWalletIds(collection, provider, users) {
       continue;
     }
 
-    // If the walletObjectId is already the same as user.walletId, no need to update walletId.
-    if (user.walletId === walletObjectId) {
-      console.log(
-        `Wallet ID already correct for user ${user.walletAddress}. Checking NFT...`
-      );
+    // Prepare the update document
+    const updateDoc = { $set: {} };
+    let needsUpdate = false;
 
-      // walletId is correct, so let's just update nft if needed
-      if (!user.nft || user.nft !== fetchedNftId) {
-        console.log(
-          `Updating NFT field for user ${user.walletAddress} to ${fetchedNftId}`
-        );
-        updates.push({
-          updateOne: {
-            filter: { _id: user._id },
-            update: { $set: { nft: fetchedNftId, nftName: nftName } },
-          },
-        });
-        nftFieldUpdatedCount++;
-      } else {
-        console.log(`No NFT update needed for user ${user.walletAddress}.`);
-      }
-    } else {
-      console.log(
-        `Updating wallet ID for user ${user.walletAddress} from ${
-          user.walletId || "none"
-        } to ${walletObjectId}`
-      );
+    // Check if walletId needs update
+    if (user.walletId !== walletObjectId) {
+      updateDoc.$set.walletId = walletObjectId;
+      updateDoc.$set.nftName = nftName;
+      walletIdUpdatedCount++;
+      needsUpdate = true;
+    }
 
-      // walletId is different or not set, so update everything as before
-      const updateDoc = { $set: { walletId: walletObjectId, nftName } };
+    // Check if NFT needs update
+    if (!user.nft || user.nft !== fetchedNftId) {
+      updateDoc.$set.nft = fetchedNftId;
+      updateDoc.$set.nftName = nftName;
+      nftFieldUpdatedCount++;
+      needsUpdate = true;
+    }
 
-      // Only update NFT field if necessary
-      if (!user.nft || user.nft !== fetchedNftId) {
-        console.log(
-          `Also updating NFT for user ${user.walletAddress} to ${fetchedNftId}`
-        );
-        updateDoc.$set.nft = fetchedNftId;
-        nftFieldUpdatedCount++;
-      } else {
-        console.log(
-          `Wallet updated, but NFT already correct for user ${user.walletAddress}.`
-        );
-      }
+    // Always update nftData if we fetched new NFT data
+    if (!user.nftData || needsUpdate) {
+      updateDoc.$set.nftData = fetchedNft;
+      needsUpdate = true;
+      console.log(`Updating nftData for user ${user.walletAddress}`);
+    }
 
+    if (needsUpdate) {
       updates.push({
         updateOne: {
           filter: { _id: user._id },
           update: updateDoc,
         },
       });
-
-      // If we changed the walletId, increment the walletIdUpdatedCount
-      if (user.walletId !== walletObjectId) {
-        walletIdUpdatedCount++;
-      }
     }
   }
 
   if (updates.length > 0) {
     console.log(
-      `Performing bulk write for ${updates.length} NFT/wallet updates...`
+      `Performing bulk write for ${updates.length} NFT/wallet/nftData updates...`
     );
     await collection.bulkWrite(updates);
-    console.log("Bulk NFT/wallet updates completed.");
+    console.log("Bulk NFT/wallet/nftData updates completed.");
   } else {
-    console.log("No NFT/wallet updates needed.");
+    console.log("No NFT/wallet/nftData updates needed.");
   }
 
   return { walletIdUpdatedCount, nftFieldUpdatedCount };
