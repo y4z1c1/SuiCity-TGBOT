@@ -204,12 +204,31 @@ async function updateNftFieldsAndWalletIds(collection, provider, users) {
   const results = await Promise.all(
     validUsers.map((user) =>
       limit(async () => {
-        // Check if we need to fetch NFT data (either missing nft, walletId, or nftData)
-        if (user.nft && user.walletId && user.nftData) {
+        // Check if nft field is an object instead of string
+        if (user.nft && typeof user.nft === "object") {
           console.log(
-            `User ${user.walletAddress} already has NFT, walletId, and nftData, skipping blockchain call.`
+            `User ${user.walletAddress} has nft as object, will update to use object ID`
           );
-          return { user, fetchedNft: null };
+          // Force a fetch to get current NFT data
+          const fetchedNft = await fetchNftFromWalletCached(
+            provider,
+            user.walletAddress,
+            nftCache
+          );
+          return { user, fetchedNft, forceUpdate: true };
+        }
+
+        // Original check for missing data
+        if (
+          user.nft &&
+          user.walletId &&
+          user.nftData &&
+          typeof user.nft === "string"
+        ) {
+          console.log(
+            `User ${user.walletAddress} already has valid NFT, walletId, and nftData, skipping blockchain call.`
+          );
+          return { user, fetchedNft: null, forceUpdate: false };
         }
 
         const fetchedNft = await fetchNftFromWalletCached(
@@ -217,7 +236,7 @@ async function updateNftFieldsAndWalletIds(collection, provider, users) {
           user.walletAddress,
           nftCache
         );
-        return { user, fetchedNft };
+        return { user, fetchedNft, forceUpdate: false };
       })
     )
   );
@@ -225,9 +244,15 @@ async function updateNftFieldsAndWalletIds(collection, provider, users) {
   const updates = [];
   let walletIdUpdatedCount = 0;
   let nftFieldUpdatedCount = 0;
-  for (const { user, fetchedNft } of results) {
-    // If we didn't fetch NFT because user already had all required fields, no update needed
-    if (!fetchedNft && user.nft && user.walletId && user.nftData) {
+  for (const { user, fetchedNft, forceUpdate } of results) {
+    // Skip if no updates needed and not forcing update
+    if (
+      !fetchedNft &&
+      user.nft &&
+      user.walletId &&
+      user.nftData &&
+      !forceUpdate
+    ) {
       console.log(
         `No changes needed for user ${user.walletAddress}. Already up-to-date.`
       );
@@ -267,16 +292,20 @@ async function updateNftFieldsAndWalletIds(collection, provider, users) {
       needsUpdate = true;
     }
 
-    // Check if NFT needs update
-    if (!user.nft || user.nft !== fetchedNftId) {
+    // Check if NFT needs update or is in wrong format
+    if (
+      !user.nft ||
+      user.nft !== fetchedNftId ||
+      typeof user.nft === "object"
+    ) {
       updateDoc.$set.nft = fetchedNftId;
       updateDoc.$set.nftName = nftName;
       nftFieldUpdatedCount++;
       needsUpdate = true;
     }
 
-    // Always update nftData if we fetched new NFT data
-    if (!user.nftData || needsUpdate) {
+    // Always update nftData if we fetched new NFT data or forcing update
+    if (!user.nftData || needsUpdate || forceUpdate) {
       updateDoc.$set.nftData = fetchedNft;
       needsUpdate = true;
       console.log(`Updating nftData for user ${user.walletAddress}`);
