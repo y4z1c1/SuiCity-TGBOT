@@ -351,27 +351,22 @@ async function fetchSityBalance(provider, walletId) {
 
 // Function to count staked Sitizen NFTs by type
 async function countStakedSitizens(collection) {
-  console.log("Counting staked Sitizen NFTs by type...");
-  const pipeline = [
-    {
-      $match: {
-        "nftData.data.content.fields.extra_nested_data.1": { $exists: true },
-      },
-    },
-    {
-      $project: {
-        stakedNfts: "$nftData.data.content.fields.extra_nested_data.1",
-      },
-    },
-  ];
+  console.log("counting staked sitizen nfts by type...");
 
-  const users = await collection.aggregate(pipeline).toArray();
-  console.log(`Found ${users.length} users with staked Sitizen NFTs.`);
+  // get all documents that have nftData
+  const cursor = collection
+    .find({
+      "nftData.content.fields": { $exists: true },
+    })
+    .project({
+      walletAddress: 1,
+      "nftData.content.fields.extra_nested_data": 1,
+    });
 
-  // Initialize counters for each type
+  // initialize counters
   const types = {
     total: 0,
-    civilian: 0, // index 0
+    sivilian: 0, // index 0 - renamed to be consistent with email template
     general: 0, // index 1
     officer: 0, // index 2
     clown: 0, // index 3
@@ -379,38 +374,87 @@ async function countStakedSitizens(collection) {
     legendary: 0, // index 5
   };
 
-  // Count NFTs by type
-  for (const user of users) {
-    if (Array.isArray(user.stakedNfts)) {
-      user.stakedNfts.forEach((nftType) => {
-        types.total++;
-        switch (nftType) {
-          case 0:
-            types.civilian++;
-            break;
-          case 1:
-            types.general++;
-            break;
-          case 2:
-            types.officer++;
-            break;
-          case 3:
-            types.clown++;
-            break;
-          case 4:
-            types.engineer++;
-            break;
-          case 5:
-            types.legendary++;
-            break;
-          default:
-            console.log(`Unknown NFT type: ${nftType}`);
-        }
-      });
-    }
-  }
+  const usersWithStaked = [];
+  let totalScanned = 0;
+  let docsWithExtraNestedLength2 = 0;
 
-  console.log("Staked Sitizen NFT counts:", types);
+  // manually process each document
+  await cursor.forEach((doc) => {
+    totalScanned++;
+
+    if (totalScanned % 1000 === 0) {
+      console.log(`scanned ${totalScanned} documents...`);
+    }
+
+    try {
+      // check if doc has extra_nested_data
+      if (doc.nftData?.content?.fields?.extra_nested_data) {
+        const extraNestedData = doc.nftData.content.fields.extra_nested_data;
+
+        // check if extra_nested_data has length of 2 (from example, this is how they're structured)
+        if (Array.isArray(extraNestedData) && extraNestedData.length === 2) {
+          docsWithExtraNestedLength2++;
+          const stakedNfts = extraNestedData[1];
+
+          // collect document if it has any staked NFTs
+          let hasStakedNfts = false;
+
+          if (Array.isArray(stakedNfts)) {
+            for (let i = 0; i < stakedNfts.length; i++) {
+              const nftType = stakedNfts[i];
+
+              // FIXED: Count all entries, including "0" which represents civilians
+              types.total++;
+              hasStakedNfts = true;
+
+              // Handle each NFT type as a string
+              if (nftType === "0") {
+                types.sivilian++;
+              } else if (nftType === "1") {
+                types.general++;
+              } else if (nftType === "2") {
+                types.officer++;
+              } else if (nftType === "3") {
+                types.clown++;
+              } else if (nftType === "4") {
+                types.engineer++;
+              } else if (nftType === "5") {
+                types.legendary++;
+              } else {
+                console.log(`unknown nft type: ${nftType}`);
+              }
+            }
+          }
+
+          if (hasStakedNfts) {
+            usersWithStaked.push({
+              walletAddress: doc.walletAddress,
+              staked: stakedNfts,
+            });
+          }
+        }
+      }
+    } catch (error) {
+      console.error("error processing document:", error);
+    }
+  });
+
+  console.log(`\ntotal documents scanned: ${totalScanned}`);
+  console.log(
+    `documents with extra_nested_data of length 2: ${docsWithExtraNestedLength2}`
+  );
+  console.log(`users with at least one staked nft: ${usersWithStaked.length}`);
+  console.log(`total staked sitizens: ${types.total}`);
+  console.log(`staked civilians: ${types.sivilian}`);
+  console.log(`staked generals: ${types.general}`);
+  console.log(`staked officers: ${types.officer}`);
+  console.log(`staked clowns: ${types.clown}`);
+  console.log(`staked engineers: ${types.engineer}`);
+  console.log(`staked legendaries: ${types.legendary}`);
+  console.log(
+    `sivilians: ${types.sivilian}, generals: ${types.general}, officers: ${types.officer}`
+  );
+
   return types;
 }
 
@@ -518,7 +562,7 @@ Summary Report:
 
 Staked Sitizen NFTs:
 - Total Staked: ${summary.stakedSitizens.total}
-- Civilians: ${summary.stakedSitizens.civilian}
+- Sivilians: ${summary.stakedSitizens.sivilian}
 - Generals: ${summary.stakedSitizens.general}
 - Officers: ${summary.stakedSitizens.officer}
 - Clowns: ${summary.stakedSitizens.clown}
@@ -563,7 +607,7 @@ async function main() {
   let totalSityBalance = "";
   let stakedSitizens = {
     total: 0,
-    civilian: 0,
+    sivilian: 0,
     general: 0,
     officer: 0,
     clown: 0,

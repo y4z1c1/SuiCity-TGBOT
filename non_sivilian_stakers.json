@@ -1,0 +1,604 @@
+{
+  "summary": {
+    "totalUsersWithNonSivilianNfts": 65,
+    "generalCount": 35,
+    "officerCount": 36,
+    "clownCount": 34,
+    "engineerCount": 36,
+    "legendaryCount": 4
+  },
+  "users": [
+    {
+      "walletAddress": "0x559ac008f0cfc0c2ea7195f082eef20b28499e317025ea3c0d49829f83edde76",
+      "staked": [
+        "6",
+        "2",
+        "2",
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "walletAddress": "0x66618f858a37fe9561e024f2af3688067fe0e7b7ab8476b24a0223bf94bbe63b",
+      "staked": [
+        "4",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x4b7f2a0c41e61e8048be93da887ec7354af23096aaf4010317590824b174227d",
+      "staked": [
+        "2",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x89d4c3731fe44e2032a092d72b66650672c20ae96320c0de6bf1e65762b24a49",
+      "staked": [
+        "2",
+        "1",
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x50e72eb46051e6cd4dfd1a5dbd695e6054c05d3b8a2a7da24690eb7a273181ed",
+      "staked": [
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x001909994a64d3626d524802e52609572990eef076e18a8baf24b8b28889dc8a",
+      "staked": [
+        "2",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xd0ff7e3c5d4c17780d138382a18728c3672669c162e5d8e9265a3aa23f6004c0",
+      "staked": [
+        "5",
+        "0",
+        "0",
+        "0",
+        "2"
+      ]
+    },
+    {
+      "walletAddress": "0xe1650c21aa8f80b86ffe5b9416f5355abf12dfa5008055929520484c1053c317",
+      "staked": [
+        "4",
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xdb912ec17ef4f026af323c34facda269470b52cf163a3b56975b7371cb2ea277",
+      "staked": [
+        "0",
+        "0",
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xaec54c6bae638438b682c06f5500b630c4f47cf8063c62677bffb612200ec49c",
+      "staked": [
+        "1",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x5703206236b61e0726c6153f7bf47a4c3c55396ac9aad0acfbca8c9140f65a7b",
+      "staked": [
+        "5",
+        "0",
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xe3f58e8e29fdd16baf6114ed5520e002d6d2c93691d9dd1f44efb62320de4cab",
+      "staked": [
+        "3",
+        "0",
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xfe14ae537143c9152b66f05500688d5276db041edad580d327ba95f4602aeb93",
+      "staked": [
+        "3",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xcfab9630428513ebd2f39dd5e00fde44f87a9f6fb968baf9be0baee64c4a4eb4",
+      "staked": [
+        "2",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x84eec5448c9787c1bb599955b413ea93be8932ddd2c047da795733635eec7682",
+      "staked": [
+        "17",
+        "0",
+        "0",
+        "2"
+      ]
+    },
+    {
+      "walletAddress": "0x34791cbaefc3b9eefc3c7debc45224eb51748990b206158fa03a389cace65e22",
+      "staked": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x80df007c46157c429377eaa5dadcccae469a4bedeab72111666a0fc310220bb3",
+      "staked": [
+        "1",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xddced6f24381f80ac5c2a24cd3d624389d25a789b89ec0c1230dd3f538c58e9f",
+      "staked": [
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x9c0baee9868b11db1eab933aa1beed17e916e550cd6d3cb0c1c2ee6dc85cc21a",
+      "staked": [
+        "5",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x08b8700a6cf6a41835de61163f8dd55bccbcd9e8ed3150079b3feb8513c3e221",
+      "staked": [
+        "3",
+        "2"
+      ]
+    },
+    {
+      "walletAddress": "0x8c8161446b9894aed7a40e7bcee14ce2878f311c1a7e32c7bca83074798d6df5",
+      "staked": [
+        "5",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x759e1e037caec1e62d65cc7d950f6f1879dcc3293b916b68257d27dadff090c7",
+      "staked": [
+        "14",
+        "0",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x25e7c7e22682676c0ea0b20bde7befe942859a9e983001a459c5976d5c13af41",
+      "staked": [
+        "5",
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x8093c7b0e2993dbe7684cb78a9342ce18bafbcf1ddfee426ad90e03cb086a02b",
+      "staked": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x8f5536e0273ed34f5902371146aa177f6f34101980b8c6e1ffc4c74096f300d7",
+      "staked": [
+        "6",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xb80cbe14d7cae4566923a80f2c15c24b93dd6f631481c04e3db4eae55eaf75a9",
+      "staked": [
+        "1",
+        "0",
+        "1",
+        "0",
+        "2"
+      ]
+    },
+    {
+      "walletAddress": "0xf0a97d92a2a5a670299cb0f2a1042a714b8a4adf548e1ce482388e25e5441a42",
+      "staked": [
+        "1",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xe8395686bd4f0680a136d0472599507916c639917789cd2d501878a62b194def",
+      "staked": [
+        "4",
+        "2",
+        "0"
+      ]
+    },
+    {
+      "walletAddress": "0xd8a951b7f21e95a9f81307f80396790291449d29c43fcf6bacdef1e66015aa11",
+      "staked": [
+        "6",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xd1342627716253ffb0e139bedd4e6950e17f418279a257fe88f98f04d6333eed",
+      "staked": [
+        "2",
+        "2"
+      ]
+    },
+    {
+      "walletAddress": "0xeac492c469b5aded69e334eedf17cef7ea0cb1d4748dcc73a005af85f18658ef",
+      "staked": [
+        "6",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x8a2d836da4e7e2e604bc186513cd353227bf50ac65965da14ac2edf7529aaf27",
+      "staked": [
+        "5",
+        "0",
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x85588ced1b0617b4c4fb14a44696fdc59b935aaba167291b0cec334bc8ab3e40",
+      "staked": [
+        "5",
+        "0",
+        "2",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xccd1cc8086ca7efe40c9288267746ab478573e862ebe819ecbb2195ced53e777",
+      "staked": [
+        "20",
+        "2",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x149bd7b6fea575f35843b5b02738dc4c68de9e53112ad47db096021f337bbbb4",
+      "staked": [
+        "21",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x9f4856a47b65977629cb87db890f8b8d79ffd04153c1aba9d2432243f1c46cb5",
+      "staked": [
+        "9",
+        "2",
+        "3",
+        "1",
+        "2",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x39e0624213a809c8cfcd1a7470dc189a1a9a95d6099515470b1a50b2a026f4b6",
+      "staked": [
+        "5",
+        "1",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x5035540287a1bbbd99218d0d0f4299129c4d86cb6dbe27cdd6ecc5d5df6d9c65",
+      "staked": [
+        "7",
+        "0",
+        "1",
+        "0",
+        "2"
+      ]
+    },
+    {
+      "walletAddress": "0xe633e76e9f8de02ee2f5245ad1b5650adaba01d112691ba05b009c8957f75682",
+      "staked": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x0b07d5fb51ff040e00fc61f5e9eebd9f6cfeadd843ac66451a5cee24c2d701ae",
+      "staked": [
+        "4",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x72f5586c4df2feb7ca038c4fdcff8e121eac9a95e6b248cf3942f3dfbdb0f948",
+      "staked": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x33958821a39c999e0a6f15c91f8d5b069d58b7a6dfff1404d8284b8c457efd4c",
+      "staked": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x84d5dde264bb93834422bab5d52d634f61ed71f64fdc633d3f4584d3b749b4e0",
+      "staked": [
+        "6",
+        "1",
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x41073dfc618b544ec1487ed9f261bdbae0169f8746b5ea08ce41b2d5a96dd132",
+      "staked": [
+        "1",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x8fb9df462587a25eb2ae3731b59f44627276f024e013edf805997049f5ec8d23",
+      "staked": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x18c1e07c7f73c5ba267363d30e6ea63ec39246fd46e08833883a2c8f85ec69a2",
+      "staked": [
+        "2",
+        "0",
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xff9a2a5da9e661a2c113ca6c030c67fb98422a0587bd3cd74cd9899b8613effa",
+      "staked": [
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x5d49d956948dc1e1d57c147952fcca17f757d255b5ab544f55ce104783b7ef98",
+      "staked": [
+        "2",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x234dfe5f541bc9f95715f390b92e48ba3576c4529cb71aaaf6d3b6c20caede81",
+      "staked": [
+        "12",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x983624f24e67d32dd6501b342e109414c1d2ac57d8018d81bba93efcdc99f927",
+      "staked": [
+        "2",
+        "0",
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x553f812deb08af48bd3b6f4720d502b7f8affa07a322cbe3b54d1b59fa035d76",
+      "staked": [
+        "14",
+        "1",
+        "3",
+        "1",
+        "4"
+      ]
+    },
+    {
+      "walletAddress": "0xe95fa3c8915d0044588111a5154a2929100a26706c6687aae3a66ff572d0cb63",
+      "staked": [
+        "6",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x4edaf506068ee3ccbe9ec4ca5ddb1e94ca29ea696dcfbfbf669ff32f12c68843",
+      "staked": [
+        "32",
+        "3",
+        "3",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x7f60fb2c0d25d45f8db63d8a37e7c5e92bd255d3fa97d8c71339fe50dc56b99f",
+      "staked": [
+        "3",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x3714fa3593575ce083b73efcc7247c304ed8af8ba30553d086d98a168f6d099c",
+      "staked": [
+        "6",
+        "1",
+        "0",
+        "0",
+        "2"
+      ]
+    },
+    {
+      "walletAddress": "0x9a247dc3013b8bb440b5bbf060a0d4860e99cd8c19b2a433863f36a6b14b56e3",
+      "staked": [
+        "6",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xcd3e942aadcb02365d2f6d83ea190e0cc5c6a8e4eed2675d63dd087613975042",
+      "staked": [
+        "12",
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x1664dbadd8149e0de9fd815fa993692453d2a23ee4197fec70332fa797b36000",
+      "staked": [
+        "13",
+        "0",
+        "2",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x6f363991284abe937fa45342e47e73f7529d23efaad7f661cd67f9529543c541",
+      "staked": [
+        "2",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x3c00ea1d14107cb7e8a2e4105beffe4f8c6aa695631e4de9b9b0f166584e9f46",
+      "staked": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xcf76f2f6bf6affc9e2f4aaa5d3095ee07c2837d23469f1d6e3faf8e623793672",
+      "staked": [
+        "7",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x627dc5ea4d2e54df9f5d17c37b8e2b0eb9279ae42bb777ca6e944b1f1114827a",
+      "staked": [
+        "7",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xe96edea13e85b7d8dab9ae4946a90d26746a63829e738ffe574e9454b9da0fd0",
+      "staked": [
+        "11",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0x9a53f99621cda3ecaf9ba28acb848c62216e1bfbd3dff207cb8209b28bc33fed",
+      "staked": [
+        "0",
+        "0",
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "walletAddress": "0xceacb45701f2554892b2b04300a142368e623fe10ccfc4ebf6d790d6a31c7527",
+      "staked": [
+        "0",
+        "1"
+      ]
+    }
+  ]
+}

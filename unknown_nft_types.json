@@ -1,0 +1,93 @@
+{
+  "summary": {
+    "totalDocumentsScanned": 3703,
+    "documentsWithUnknownTypes": 29,
+    "uniqueUnknownTypes": 11
+  },
+  "typeDetails": {
+    "type_6": {
+      "count": 8,
+      "wallets": [
+        "0x559ac008f0cfc0c2ea7195f082eef20b28499e317025ea3c0d49829f83edde76",
+        "0x8f5536e0273ed34f5902371146aa177f6f34101980b8c6e1ffc4c74096f300d7",
+        "0xd8a951b7f21e95a9f81307f80396790291449d29c43fcf6bacdef1e66015aa11",
+        "0xeac492c469b5aded69e334eedf17cef7ea0cb1d4748dcc73a005af85f18658ef",
+        "0x84d5dde264bb93834422bab5d52d634f61ed71f64fdc633d3f4584d3b749b4e0",
+        "0xe95fa3c8915d0044588111a5154a2929100a26706c6687aae3a66ff572d0cb63",
+        "0x3714fa3593575ce083b73efcc7247c304ed8af8ba30553d086d98a168f6d099c",
+        "0x9a247dc3013b8bb440b5bbf060a0d4860e99cd8c19b2a433863f36a6b14b56e3"
+      ]
+    },
+    "type_7": {
+      "count": 9,
+      "wallets": [
+        "0x4b8b0a085dda5487f301f9827101dd7047be5b70ddbfdaebc1672dd52c96cc36",
+        "0xa2c83a5ec86788b26d46487ff8d945251ad9bb3fe031467527956ffe6d032839",
+        "0xd864582133a68665876fbf1010dbcf6bb8bc82a4c21915f65bc84fc303e990c7",
+        "0x93dffeca2a06b900394aea0767bedab255287f9c506881a6be7056b79d6c545d",
+        "0x46498dd0fbe54eb87a343b915dfdc6bc563699958e29e598374e6e05d2ea8f15",
+        "0x5035540287a1bbbd99218d0d0f4299129c4d86cb6dbe27cdd6ecc5d5df6d9c65",
+        "0x2ce776a6662a89afde196af9fc9f7c708980bcad749b96147dddf433c8df564c",
+        "0xcf76f2f6bf6affc9e2f4aaa5d3095ee07c2837d23469f1d6e3faf8e623793672",
+        "0x627dc5ea4d2e54df9f5d17c37b8e2b0eb9279ae42bb777ca6e944b1f1114827a"
+      ]
+    },
+    "type_9": {
+      "count": 2,
+      "wallets": [
+        "0x9f4856a47b65977629cb87db890f8b8d79ffd04153c1aba9d2432243f1c46cb5",
+        "0x4181de0a0e0d5f66ee96292e84e555dee9630f1f11b0d20d76b270512c10d6f1"
+      ]
+    },
+    "type_11": {
+      "count": 1,
+      "wallets": [
+        "0xe96edea13e85b7d8dab9ae4946a90d26746a63829e738ffe574e9454b9da0fd0"
+      ]
+    },
+    "type_12": {
+      "count": 2,
+      "wallets": [
+        "0x234dfe5f541bc9f95715f390b92e48ba3576c4529cb71aaaf6d3b6c20caede81",
+        "0xcd3e942aadcb02365d2f6d83ea190e0cc5c6a8e4eed2675d63dd087613975042"
+      ]
+    },
+    "type_13": {
+      "count": 1,
+      "wallets": [
+        "0x1664dbadd8149e0de9fd815fa993692453d2a23ee4197fec70332fa797b36000"
+      ]
+    },
+    "type_14": {
+      "count": 2,
+      "wallets": [
+        "0x759e1e037caec1e62d65cc7d950f6f1879dcc3293b916b68257d27dadff090c7",
+        "0x553f812deb08af48bd3b6f4720d502b7f8affa07a322cbe3b54d1b59fa035d76"
+      ]
+    },
+    "type_17": {
+      "count": 1,
+      "wallets": [
+        "0x84eec5448c9787c1bb599955b413ea93be8932ddd2c047da795733635eec7682"
+      ]
+    },
+    "type_20": {
+      "count": 1,
+      "wallets": [
+        "0xccd1cc8086ca7efe40c9288267746ab478573e862ebe819ecbb2195ced53e777"
+      ]
+    },
+    "type_21": {
+      "count": 1,
+      "wallets": [
+        "0x149bd7b6fea575f35843b5b02738dc4c68de9e53112ad47db096021f337bbbb4"
+      ]
+    },
+    "type_32": {
+      "count": 1,
+      "wallets": [
+        "0x4edaf506068ee3ccbe9ec4ca5ddb1e94ca29ea696dcfbfbf669ff32f12c68843"
+      ]
+    }
+  }
+}

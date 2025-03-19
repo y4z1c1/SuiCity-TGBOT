@@ -1,0 +1,407 @@
+connecting to mongodb...
+connected successfully
+performing deep analysis of staked sitizens data...
+total documents in database: 13863
+processing batch 1 (documents 1-1000)...
+[DOC 1] Wallet: 0x559ac008f0cfc0c2ea7195f082eef20b28499e317025ea3c0d49829f83edde76, extra_nested_data: [["1","1","1","0","1","1","1"],["6","2","2","1","0","0"]]
+  - Staked NFTs: ["6","2","2","1","0","0"]
+  - Unknown NFT type found: 6
+[DOC 19] Wallet: 0x66618f858a37fe9561e024f2af3688067fe0e7b7ab8476b24a0223bf94bbe63b, extra_nested_data: [["0","0","0"],["4","0","0","1"]]
+  - Staked NFTs: ["4","0","0","1"]
+[DOC 30] Wallet: 0x98dc9fa99967d1cdfe32408afe451af90c474b4d4435da3c2be8506ec4e9435b, extra_nested_data: [["0","0","0","0","1"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 31] Wallet: 0x4b7f2a0c41e61e8048be93da887ec7354af23096aaf4010317590824b174227d, extra_nested_data: [["0","0","0"],["2","0","0","0","1"]]
+  - Staked NFTs: ["2","0","0","0","1"]
+[DOC 37] Wallet: 0x89d4c3731fe44e2032a092d72b66650672c20ae96320c0de6bf1e65762b24a49, extra_nested_data: [["0","0","0"],["2","1","1","0","1"]]
+  - Staked NFTs: ["2","1","1","0","1"]
+[DOC 40] Wallet: 0x50e72eb46051e6cd4dfd1a5dbd695e6054c05d3b8a2a7da24690eb7a273181ed, extra_nested_data: [["0","0","0"],["0","0","1"]]
+  - Staked NFTs: ["0","0","1"]
+[DOC 56] Wallet: 0x803c5bb7dced90b84680251ec021f797142e029075db7a077db2be24c97d42cc, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 57] Wallet: 0x44d12a216df1cc52bc219d6a6b9a3d7b5c64d526a0f9e80ed89e5eb8c4bb6104, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 59] Wallet: 0x2531aa6cdab50812493fb8197f11a9f0d8ac6503ffbe033e68316320a06cc31b, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 68] Wallet: 0x001909994a64d3626d524802e52609572990eef076e18a8baf24b8b28889dc8a, extra_nested_data: [["0","0","0"],["2","0","1"]]
+  - Staked NFTs: ["2","0","1"]
+[DOC 73] Wallet: 0xd0ff7e3c5d4c17780d138382a18728c3672669c162e5d8e9265a3aa23f6004c0, extra_nested_data: [["0","0","0"],["5","0","0","0","2"]]
+  - Staked NFTs: ["5","0","0","0","2"]
+[DOC 78] Wallet: 0xe1650c21aa8f80b86ffe5b9416f5355abf12dfa5008055929520484c1053c317, extra_nested_data: [["0","0","0"],["4","0","1","1"]]
+  - Staked NFTs: ["4","0","1","1"]
+[DOC 83] Wallet: 0x4b8b0a085dda5487f301f9827101dd7047be5b70ddbfdaebc1672dd52c96cc36, extra_nested_data: [["0","0","0"],["7"]]
+  - Staked NFTs: ["7"]
+  - Unknown NFT type found: 7
+[DOC 105] Wallet: 0x502c6426df20358f4bb240d66ba58bb6cee1f55ea53756d97b689e8889c3d06e, extra_nested_data: [["0","0","0"],["4"]]
+  - Staked NFTs: ["4"]
+[DOC 106] Wallet: 0xdb912ec17ef4f026af323c34facda269470b52cf163a3b56975b7371cb2ea277, extra_nested_data: [["0","0","0"],["0","0","1","0","1"]]
+  - Staked NFTs: ["0","0","1","0","1"]
+[DOC 110] Wallet: 0xaec54c6bae638438b682c06f5500b630c4f47cf8063c62677bffb612200ec49c, extra_nested_data: [["1","0","0","0","1","1","1"],["1","0","0","1"]]
+  - Staked NFTs: ["1","0","0","1"]
+[DOC 140] Wallet: 0xc1d5181cca0b535b906268df2320071ad6126ebb8d72ce8b9aedd8409d32536e, extra_nested_data: [["1","1","1","0","1","1","1"],["4"]]
+  - Staked NFTs: ["4"]
+[DOC 183] Wallet: 0x489f3065526bcdad78f11060159192c6fc14eb32c52aeb9918b010e62101156c, extra_nested_data: [["0","0","0"],["5"]]
+  - Staked NFTs: ["5"]
+[DOC 235] Wallet: 0x7e7b0e9acb7c63609cebda96d61507cb66ac661be795fae24cc6346a6f53577d, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 238] Wallet: 0xe3f58e8e29fdd16baf6114ed5520e002d6d2c93691d9dd1f44efb62320de4cab, extra_nested_data: [["0","0","0"],["3","0","0","1","1"]]
+  - Staked NFTs: ["3","0","0","1","1"]
+[DOC 284] Wallet: 0xdeaf0ea4812d23a46fd29ad3b0040f3710db4ef3a91012af42fa0af9ff161437, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 291] Wallet: 0x67a3a902551bfdd3cef8b592975991f2bd927d140fb1d3829394eeac426636fe, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+[DOC 307] Wallet: 0xfe14ae537143c9152b66f05500688d5276db041edad580d327ba95f4602aeb93, extra_nested_data: [["0","0","0"],["3","1"]]
+  - Staked NFTs: ["3","1"]
+[DOC 326] Wallet: 0x8b469abb605e8e27ea541df47dd2a4a3da8fd757df5a6af336be595f0f220469, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 332] Wallet: 0xa2c83a5ec86788b26d46487ff8d945251ad9bb3fe031467527956ffe6d032839, extra_nested_data: [["0","0","0"],["7"]]
+  - Staked NFTs: ["7"]
+  - Unknown NFT type found: 7
+[DOC 336] Wallet: 0xcfab9630428513ebd2f39dd5e00fde44f87a9f6fb968baf9be0baee64c4a4eb4, extra_nested_data: [["0","0","0"],["2","0","0","1"]]
+  - Staked NFTs: ["2","0","0","1"]
+[DOC 350] Wallet: 0x04a776030d5d8524682a8621c4b330c1d8eea60e6e9e4a188faa82247ecb10f9, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 364] Wallet: 0x49e30d8599f4e70a77f31d66014e335d4d8353dc2090a22689aaf79ebb1065e6, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 365] Wallet: 0x84eec5448c9787c1bb599955b413ea93be8932ddd2c047da795733635eec7682, extra_nested_data: [["0","0","0"],["17","0","0","2"]]
+  - Staked NFTs: ["17","0","0","2"]
+  - Unknown NFT type found: 17
+[DOC 422] Wallet: 0x34791cbaefc3b9eefc3c7debc45224eb51748990b206158fa03a389cace65e22, extra_nested_data: [["0","0","0"],["0","1","0","1","1"]]
+  - Staked NFTs: ["0","1","0","1","1"]
+[DOC 470] Wallet: 0x324d5ccebe425a759827fb28bb4b59adcfaa6f950eb6e8a22f7fd3ba34ed34f1, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 527] Wallet: 0x6f768d506fb63f7a0222e8be89600fc8a856e9e6fe6a3e46e832ed356068f263, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 530] Wallet: 0x99a4a668e0810bcab75665f2b7356a7f7adf587a8782ec82b9ba5ae12ef0de07, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 534] Wallet: 0x80df007c46157c429377eaa5dadcccae469a4bedeab72111666a0fc310220bb3, extra_nested_data: [["1","1","1","0","1","1","1"],["1","0","0","1"]]
+  - Staked NFTs: ["1","0","0","1"]
+[DOC 576] Wallet: 0xddced6f24381f80ac5c2a24cd3d624389d25a789b89ec0c1230dd3f538c58e9f, extra_nested_data: [["0","0","0"],["0","0","1"]]
+  - Staked NFTs: ["0","0","1"]
+[DOC 627] Wallet: 0xe5a78aebaaa91efdd12bf02a3fbd742383fe80785c459c2c0bcaed1ae340ded9, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+[DOC 786] Wallet: 0x9c0baee9868b11db1eab933aa1beed17e916e550cd6d3cb0c1c2ee6dc85cc21a, extra_nested_data: [["0","0","0"],["5","1"]]
+  - Staked NFTs: ["5","1"]
+[DOC 856] Wallet: 0x7f8550608cca32d3aa6125aa0e6e61c26b3e543da50c92c0e659b14d2d7c43bd, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+[DOC 911] Wallet: 0xc37aca36b04df03fb3caad873f35ee0aee018ed822a539f356a27941efe85787, extra_nested_data: [["0","0","0"],["5"]]
+  - Staked NFTs: ["5"]
+[DOC 976] Wallet: 0x1b7c6363356a0d47cce0bd5dd5b5adbea302371596bbd4b3bf8c7864181f0cdf, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+scanned 1000/13863 documents (7.21%)...
+processing batch 2 (documents 1001-2000)...
+[DOC 1023] Wallet: 0xe21e69ccf8c5c40648ea1dde78da396d34ce6360e8110e77da2a93edadf4df07, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 1114] Wallet: 0xf14a609e4c4fae95fbeadcaf042cc98253040d98017bdd33cf6051818c53d427, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 1123] Wallet: 0xcd05b756c0a2ed58d30c4332fc4392ce1c5c23c4849125d6a48eb820de0b5520, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 1131] Wallet: 0x08b8700a6cf6a41835de61163f8dd55bccbcd9e8ed3150079b3feb8513c3e221, extra_nested_data: [["0","0","0"],["3","2"]]
+  - Staked NFTs: ["3","2"]
+[DOC 1242] Wallet: 0x8c8161446b9894aed7a40e7bcee14ce2878f311c1a7e32c7bca83074798d6df5, extra_nested_data: [["0","0","0"],["5","0","1"]]
+  - Staked NFTs: ["5","0","1"]
+[DOC 1264] Wallet: 0x759e1e037caec1e62d65cc7d950f6f1879dcc3293b916b68257d27dadff090c7, extra_nested_data: [["0","0","0"],["14","0","1","1","1"]]
+  - Staked NFTs: ["14","0","1","1","1"]
+  - Unknown NFT type found: 14
+[DOC 1268] Wallet: 0x3ea9f0dc7618ec833097c4bd2373be7f387201fd966d486637de31ab144e488a, extra_nested_data: [["0","0","0"],["0"]]
+  - Staked NFTs: ["0"]
+[DOC 1274] Wallet: 0xdf32a6800a0529d2fc67fa3f3e42f4cfd45b5d13edb5be155d4bd828db310bed, extra_nested_data: [["1","1","1","0","1","1","1"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 1307] Wallet: 0x33a6625a0a1dc6ff3f17d9704c8e5d3e33d9ee039569a82944e28d0f2513d661, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+[DOC 1314] Wallet: 0x02646eedaa292bf58a32a554769350c7129cc735c71439619ad4fcb83dd15ac0, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+[DOC 1315] Wallet: 0xd864582133a68665876fbf1010dbcf6bb8bc82a4c21915f65bc84fc303e990c7, extra_nested_data: [["0","0","0"],["7"]]
+  - Staked NFTs: ["7"]
+  - Unknown NFT type found: 7
+[DOC 1335] Wallet: 0xc0c738c2fda8a6d93b5b09db6604b57d8dd35a18ecd4603908492b900436a5bb, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 1337] Wallet: 0x25e7c7e22682676c0ea0b20bde7befe942859a9e983001a459c5976d5c13af41, extra_nested_data: [["0","0","0"],["5","1","0","1"]]
+  - Staked NFTs: ["5","1","0","1"]
+[DOC 1403] Wallet: 0x0abcd7968f41436c3680a292f629533ce88830f73d272c8d2fe7fc19ea970387, extra_nested_data: [["1","1","1","0","1"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 1412] Wallet: 0x8093c7b0e2993dbe7684cb78a9342ce18bafbcf1ddfee426ad90e03cb086a02b, extra_nested_data: [["0","0","0"],["0","1"]]
+  - Staked NFTs: ["0","1"]
+[DOC 1442] Wallet: 0xd91040e81c430cfd11ae51dcdbe8ee255ddd58a3ae083c5e2b987d77b3f8be04, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 1454] Wallet: 0x8f736006d260b3e3c0a64b4a5f8c9f39be256f5c808a00f32747df7c9f4b7aa6, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 1492] Wallet: 0xceee9e812291369349a6d7ecba7e1286ee30d8cb9f60adccb6a28fc9a62892b0, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 1503] Wallet: 0x8f5536e0273ed34f5902371146aa177f6f34101980b8c6e1ffc4c74096f300d7, extra_nested_data: [["0","0","0"],["6","1"]]
+  - Staked NFTs: ["6","1"]
+  - Unknown NFT type found: 6
+[DOC 1524] Wallet: 0xb80cbe14d7cae4566923a80f2c15c24b93dd6f631481c04e3db4eae55eaf75a9, extra_nested_data: [["0","0","0"],["1","0","1","0","2"]]
+  - Staked NFTs: ["1","0","1","0","2"]
+[DOC 1583] Wallet: 0xf0a97d92a2a5a670299cb0f2a1042a714b8a4adf548e1ce482388e25e5441a42, extra_nested_data: [["0","0","0"],["1","0","0","1"]]
+  - Staked NFTs: ["1","0","0","1"]
+[DOC 1726] Wallet: 0xe8395686bd4f0680a136d0472599507916c639917789cd2d501878a62b194def, extra_nested_data: [["0","0","0"],["4","2","0"]]
+  - Staked NFTs: ["4","2","0"]
+[DOC 1927] Wallet: 0xd8a951b7f21e95a9f81307f80396790291449d29c43fcf6bacdef1e66015aa11, extra_nested_data: [["0","0","0"],["6","0","1"]]
+  - Staked NFTs: ["6","0","1"]
+  - Unknown NFT type found: 6
+[DOC 1968] Wallet: 0xc88eee35c3a323790d47ccbe0554bd9a4ef16807d826b7d483305a6b49b098b0, extra_nested_data: [["0","0","0"],["4"]]
+  - Staked NFTs: ["4"]
+[DOC 1985] Wallet: 0x93dffeca2a06b900394aea0767bedab255287f9c506881a6be7056b79d6c545d, extra_nested_data: [["0","0","0"],["7"]]
+  - Staked NFTs: ["7"]
+  - Unknown NFT type found: 7
+scanned 2000/13863 documents (14.43%)...
+processing batch 3 (documents 2001-3000)...
+[DOC 2056] Wallet: 0xa7af047623d5e7109d8e05d4770d3bfb865733406271c9bae498fd130b622708, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 2089] Wallet: 0xe65c4ddde7cf13a278028400bbd9ce4643296ae9b116b38e51d1755a144a97af, extra_nested_data: [["0","0","0"],["0"]]
+  - Staked NFTs: ["0"]
+[DOC 2250] Wallet: 0xb442dbe0fc72c1781998e0a978c96cbcf5db5eff848da7b76992cc70535ef8f8, extra_nested_data: [["0","0","0"],["0"]]
+  - Staked NFTs: ["0"]
+[DOC 2291] Wallet: 0xd1342627716253ffb0e139bedd4e6950e17f418279a257fe88f98f04d6333eed, extra_nested_data: [["0","0","0"],["2","2"]]
+  - Staked NFTs: ["2","2"]
+[DOC 2299] Wallet: 0x46498dd0fbe54eb87a343b915dfdc6bc563699958e29e598374e6e05d2ea8f15, extra_nested_data: [["0","0","0"],["7"]]
+  - Staked NFTs: ["7"]
+  - Unknown NFT type found: 7
+[DOC 2301] Wallet: 0x2230f0dab4aff09fd1d15ca09e49c53dcc2ca9e00c58c9d71e40b8d33ec79665, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+[DOC 2302] Wallet: 0x2114bbea77933ed907aef174e0decbe4c709ea0b4c7a8e66f0a6b43af064cecc, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+[DOC 2305] Wallet: 0xc2cbead45d8b59cdea8134208787709b42d0980a78d9f78d8bbfa50b67cb395d, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 2330] Wallet: 0x10d87a2fb604412dc5e8de4348cc3c1708da4a0c9753842585a5355b24cd1411, extra_nested_data: [["1","1","1","0","1","1","1"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 2402] Wallet: 0xeac492c469b5aded69e334eedf17cef7ea0cb1d4748dcc73a005af85f18658ef, extra_nested_data: [["1","1","1","0","1","1","1"],["6","0","0","1"]]
+  - Staked NFTs: ["6","0","0","1"]
+  - Unknown NFT type found: 6
+[DOC 2438] Wallet: 0x8a2d836da4e7e2e604bc186513cd353227bf50ac65965da14ac2edf7529aaf27, extra_nested_data: [["1","1","1"],["5","0","0","1","1"]]
+  - Staked NFTs: ["5","0","0","1","1"]
+[DOC 2445] Wallet: 0x85588ced1b0617b4c4fb14a44696fdc59b935aaba167291b0cec334bc8ab3e40, extra_nested_data: [["0","0","0"],["5","0","2","1","1"]]
+  - Staked NFTs: ["5","0","2","1","1"]
+[DOC 2461] Wallet: 0x0b2d1f88f182afcb5e46ef802b2cb15ecebde2ac1e70f9f5f2024e3089900841, extra_nested_data: [["0","0","0"],["0"]]
+  - Staked NFTs: ["0"]
+[DOC 2492] Wallet: 0xccd1cc8086ca7efe40c9288267746ab478573e862ebe819ecbb2195ced53e777, extra_nested_data: [["0","0","0"],["20","2","1","1","1"]]
+  - Staked NFTs: ["20","2","1","1","1"]
+  - Unknown NFT type found: 20
+[DOC 2493] Wallet: 0x149bd7b6fea575f35843b5b02738dc4c68de9e53112ad47db096021f337bbbb4, extra_nested_data: [["0","0","0"],["21","0","0","0","0","1"]]
+  - Staked NFTs: ["21","0","0","0","0","1"]
+  - Unknown NFT type found: 21
+[DOC 2540] Wallet: 0x9f4856a47b65977629cb87db890f8b8d79ffd04153c1aba9d2432243f1c46cb5, extra_nested_data: [["0","0","0"],["9","2","3","1","2","1"]]
+  - Staked NFTs: ["9","2","3","1","2","1"]
+  - Unknown NFT type found: 9
+[DOC 2544] Wallet: 0x39e0624213a809c8cfcd1a7470dc189a1a9a95d6099515470b1a50b2a026f4b6, extra_nested_data: [["0","0","0"],["5","1","0","0","1"]]
+  - Staked NFTs: ["5","1","0","0","1"]
+[DOC 2660] Wallet: 0x5035540287a1bbbd99218d0d0f4299129c4d86cb6dbe27cdd6ecc5d5df6d9c65, extra_nested_data: [["0","0","0"],["7","0","1","0","2"]]
+  - Staked NFTs: ["7","0","1","0","2"]
+  - Unknown NFT type found: 7
+[DOC 2681] Wallet: 0xe633e76e9f8de02ee2f5245ad1b5650adaba01d112691ba05b009c8957f75682, extra_nested_data: [["0","0","0"],["0","0","0","1"]]
+  - Staked NFTs: ["0","0","0","1"]
+[DOC 2786] Wallet: 0x5e990f50d5cb234bd02c53e0b15638bca94aafa624f1f9c3f142dd860fd686a9, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 2790] Wallet: 0x2ce776a6662a89afde196af9fc9f7c708980bcad749b96147dddf433c8df564c, extra_nested_data: [["0","0","0"],["7"]]
+  - Staked NFTs: ["7"]
+  - Unknown NFT type found: 7
+[DOC 2836] Wallet: 0x5a74145f887657e458a9da07c35b31fd8204e7f4c95f3df2917218964e595f78, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 2837] Wallet: 0xeddcda50e4e80b764c11c1dac4a56d5406450d28269f964a24469a4e91e8744c, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 2987] Wallet: 0x51748d9ddb79808844ee46896ff357279e946a7f597599556a79fbadb7c1b0f8, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+scanned 3000/13863 documents (21.64%)...
+processing batch 4 (documents 3001-4000)...
+scanned 4000/13863 documents (28.85%)...
+processing batch 5 (documents 4001-5000)...
+scanned 5000/13863 documents (36.07%)...
+processing batch 6 (documents 5001-6000)...
+scanned 6000/13863 documents (43.28%)...
+processing batch 7 (documents 6001-7000)...
+scanned 7000/13863 documents (50.49%)...
+processing batch 8 (documents 7001-8000)...
+scanned 8000/13863 documents (57.71%)...
+processing batch 9 (documents 8001-9000)...
+scanned 9000/13863 documents (64.92%)...
+processing batch 10 (documents 9001-10000)...
+scanned 10000/13863 documents (72.13%)...
+processing batch 11 (documents 10001-11000)...
+[DOC 10548] Wallet: 0x0b07d5fb51ff040e00fc61f5e9eebd9f6cfeadd843ac66451a5cee24c2d701ae, extra_nested_data: [["0","0","0"],["4","0","1"]]
+  - Staked NFTs: ["4","0","1"]
+[DOC 10659] Wallet: 0xb21e53b7259c8d3cd08ae3b854633284fe0a32f99ea9dee94d0e5f2e958a60fe, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+scanned 11000/13863 documents (79.35%)...
+processing batch 12 (documents 11001-12000)...
+[DOC 11006] Wallet: 0x72f5586c4df2feb7ca038c4fdcff8e121eac9a95e6b248cf3942f3dfbdb0f948, extra_nested_data: [["0","0","0"],["0","1"]]
+  - Staked NFTs: ["0","1"]
+[DOC 11012] Wallet: 0x1b086c4157dc2025865303574237a3be4652c61d5777acb18fbe45f52a03ddc1, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11026] Wallet: 0xcea6c3dbc3a8b6179099fed66451ad79d2ccdfd75d15c9b63c12b3c3f981c8c5, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11037] Wallet: 0x33958821a39c999e0a6f15c91f8d5b069d58b7a6dfff1404d8284b8c457efd4c, extra_nested_data: [["0","0","0"],["1","1","1","1","1"]]
+  - Staked NFTs: ["1","1","1","1","1"]
+[DOC 11142] Wallet: 0xe2e19ca16cb658c34fb26d2d97dcc602b4c8d8b56ed6ad9409c6675a3cef8645, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11261] Wallet: 0x84d98c94c6ddda21f91c2ec2578f1aa52d18344cf2b9f0127bba043340a87149, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11289] Wallet: 0x84d5dde264bb93834422bab5d52d634f61ed71f64fdc633d3f4584d3b749b4e0, extra_nested_data: [["0","0","0"],["6","1","0","1","1"]]
+  - Staked NFTs: ["6","1","0","1","1"]
+  - Unknown NFT type found: 6
+[DOC 11294] Wallet: 0xf7adc54d4ccc702225b06a2a246c441726baf8c3f451db5db98a3c606b21ec31, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 11308] Wallet: 0xde137b4bc833b4d17258778d758449c4befea0e47f96d6cabbbc4df88d662f0d, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 11393] Wallet: 0x78548ac74fe21b5a979cacd5e30c077e0adfe87acc0473ddb1a7b9515e5e3b1e, extra_nested_data: [["1","0","0","0","1","1","1"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11396] Wallet: 0xbc41bdcbe624a149e492fb33ff42e662e8927c90fe0ee5546890c6bcb25965c2, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11416] Wallet: 0x41073dfc618b544ec1487ed9f261bdbae0169f8746b5ea08ce41b2d5a96dd132, extra_nested_data: [["0","0","0"],["1","0","0","1"]]
+  - Staked NFTs: ["1","0","0","1"]
+[DOC 11419] Wallet: 0x0363351972ea7253d0ab957aaa1eac7abfd16c6d5f3ad7e88e242c47fc3db9ee, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11447] Wallet: 0xfb7f341da3b380f76c5615575fac0c6f9620e4095c8871a999727ae98d287f6f, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11454] Wallet: 0x8fb9df462587a25eb2ae3731b59f44627276f024e013edf805997049f5ec8d23, extra_nested_data: [["0","0","0"],["0","0","0","1"]]
+  - Staked NFTs: ["0","0","0","1"]
+[DOC 11470] Wallet: 0x18c1e07c7f73c5ba267363d30e6ea63ec39246fd46e08833883a2c8f85ec69a2, extra_nested_data: [["0","0","0"],["2","0","1","0","1"]]
+  - Staked NFTs: ["2","0","1","0","1"]
+[DOC 11472] Wallet: 0x4a4e814880f77ff87b09da7f0d946c20f15d0e94516f08cd92df7ce00fcfabc3, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+[DOC 11476] Wallet: 0xff9a2a5da9e661a2c113ca6c030c67fb98422a0587bd3cd74cd9899b8613effa, extra_nested_data: [["0","0","0"],["0","0","1"]]
+  - Staked NFTs: ["0","0","1"]
+[DOC 11488] Wallet: 0x5d49d956948dc1e1d57c147952fcca17f757d255b5ab544f55ce104783b7ef98, extra_nested_data: [["0","0","0"],["2","0","1"]]
+  - Staked NFTs: ["2","0","1"]
+[DOC 11498] Wallet: 0xf2b08e6b3cef4de7f5c0ba9648c4ce7845ec66afcd4ff5588d63478f634ad3d8, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11510] Wallet: 0x234dfe5f541bc9f95715f390b92e48ba3576c4529cb71aaaf6d3b6c20caede81, extra_nested_data: [["0","0","0"],["12","1","1","1","1"]]
+  - Staked NFTs: ["12","1","1","1","1"]
+  - Unknown NFT type found: 12
+[DOC 11556] Wallet: 0x66e9c90ae9cce8e8930efe6194179675db891d6999cdb39129cc87d2b8d419c4, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 11652] Wallet: 0x983624f24e67d32dd6501b342e109414c1d2ac57d8018d81bba93efcdc99f927, extra_nested_data: [["0","0","0"],["2","0","1","0","1"]]
+  - Staked NFTs: ["2","0","1","0","1"]
+[DOC 11668] Wallet: 0xf078de21db7af27c177eb9b2078d99cdf78c429559c1be904de7be2a4a0e6071, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 11670] Wallet: 0xd291ea1fe8d329779bb31ad8799a49ed42e7712cd4896c0d172f63adf4d17871, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 11675] Wallet: 0x553f812deb08af48bd3b6f4720d502b7f8affa07a322cbe3b54d1b59fa035d76, extra_nested_data: [["0","0","0"],["14","1","3","1","4"]]
+  - Staked NFTs: ["14","1","3","1","4"]
+  - Unknown NFT type found: 14
+[DOC 11786] Wallet: 0x36ed6862502b5ae5b3e328164b5597a93640c2f63337b7f411914eef76332672, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+scanned 12000/13863 documents (86.56%)...
+processing batch 13 (documents 12001-13000)...
+[DOC 12028] Wallet: 0xffde3f68c08af4ce66d11d68fb4fecb531b1cf8b555a96f8c8520cbb050826a1, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 12074] Wallet: 0x05b9d12aa01fe22862184255c91f3f0bb46268f8818a645d8ddc00b811d0925b, extra_nested_data: [["0","0","0"],["0"]]
+  - Staked NFTs: ["0"]
+[DOC 12075] Wallet: 0xe95fa3c8915d0044588111a5154a2929100a26706c6687aae3a66ff572d0cb63, extra_nested_data: [["0","0","0"],["6","0","0","1"]]
+  - Staked NFTs: ["6","0","0","1"]
+  - Unknown NFT type found: 6
+[DOC 12077] Wallet: 0x4edaf506068ee3ccbe9ec4ca5ddb1e94ca29ea696dcfbfbf669ff32f12c68843, extra_nested_data: [["0","0","0"],["32","3","3","1","1","1"]]
+  - Staked NFTs: ["32","3","3","1","1","1"]
+  - Unknown NFT type found: 32
+[DOC 12085] Wallet: 0x8207315bf8723c98d2160b8023849a1f886c5655a677063fc0cd7b45e3fd33c1, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 12094] Wallet: 0xae81773aa070eb87c10840787541c561ae356d4978f985cd499914c6879be1fb, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12099] Wallet: 0x7f60fb2c0d25d45f8db63d8a37e7c5e92bd255d3fa97d8c71339fe50dc56b99f, extra_nested_data: [["0","0","0"],["3","0","0","0","1"]]
+  - Staked NFTs: ["3","0","0","0","1"]
+[DOC 12128] Wallet: 0x3714fa3593575ce083b73efcc7247c304ed8af8ba30553d086d98a168f6d099c, extra_nested_data: [["0","0","0"],["6","1","0","0","2"]]
+  - Staked NFTs: ["6","1","0","0","2"]
+  - Unknown NFT type found: 6
+[DOC 12153] Wallet: 0x01748cf6b4ebb13ed1876c3e60bef3d16937c10d84e3132a07517c315b9807cb, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12161] Wallet: 0x9a247dc3013b8bb440b5bbf060a0d4860e99cd8c19b2a433863f36a6b14b56e3, extra_nested_data: [["0","0","0"],["6","1"]]
+  - Staked NFTs: ["6","1"]
+  - Unknown NFT type found: 6
+[DOC 12162] Wallet: 0xcd3e942aadcb02365d2f6d83ea190e0cc5c6a8e4eed2675d63dd087613975042, extra_nested_data: [["0","0","0"],["12","1","0","1"]]
+  - Staked NFTs: ["12","1","0","1"]
+  - Unknown NFT type found: 12
+[DOC 12165] Wallet: 0xf4421f4e4f792d8c849ee87e739130ae95a412a41aca16ced69805bcb80d3bda, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+[DOC 12181] Wallet: 0xa7b8d773d66e52c8ac09a03169279ff8d45c2982d67ec641603d7180caa89e29, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12201] Wallet: 0x8421ab54e5a84332ea4f7c00eb0ea238a8d09bfb61ede89125f32e8a591236e6, extra_nested_data: [["1","0","0","0","1","1","1"],["5"]]
+  - Staked NFTs: ["5"]
+[DOC 12203] Wallet: 0x1664dbadd8149e0de9fd815fa993692453d2a23ee4197fec70332fa797b36000, extra_nested_data: [["0","0","0"],["13","0","2","1","1"]]
+  - Staked NFTs: ["13","0","2","1","1"]
+  - Unknown NFT type found: 13
+[DOC 12208] Wallet: 0x0ee619e72d4dbaa8667e5ff1b22ba422dea186fa07ae608161298260ddc3a45c, extra_nested_data: [["1","0","0","0","1","1","1"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12235] Wallet: 0x6f363991284abe937fa45342e47e73f7529d23efaad7f661cd67f9529543c541, extra_nested_data: [["0","0","0"],["2","0","0","1"]]
+  - Staked NFTs: ["2","0","0","1"]
+[DOC 12266] Wallet: 0x3c00ea1d14107cb7e8a2e4105beffe4f8c6aa695631e4de9b9b0f166584e9f46, extra_nested_data: [["0","0","0"],["0","0","0","0","0","1"]]
+  - Staked NFTs: ["0","0","0","0","0","1"]
+[DOC 12311] Wallet: 0x3fb8fd04d97e9a2064e477d1ae5cfa11919fd08edfeefc7deeecb2d09eec0584, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12357] Wallet: 0x5e5db6c5d1e64589e1658009eba5f74cc841896365fc06524fa836a33d2d300d, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12372] Wallet: 0xb8117751f8b22ce8d272ab0181984989e13eef8624d166bd7b63e897bdf640e4, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 12407] Wallet: 0x4181de0a0e0d5f66ee96292e84e555dee9630f1f11b0d20d76b270512c10d6f1, extra_nested_data: [["0","0","0"],["9"]]
+  - Staked NFTs: ["9"]
+  - Unknown NFT type found: 9
+[DOC 12418] Wallet: 0xcf76f2f6bf6affc9e2f4aaa5d3095ee07c2837d23469f1d6e3faf8e623793672, extra_nested_data: [["0","0","0"],["7","1"]]
+  - Staked NFTs: ["7","1"]
+  - Unknown NFT type found: 7
+[DOC 12438] Wallet: 0xa1a080003e9bcf963d2653c753aa516ba1cf101c02e27de57270a231e0385d69, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12444] Wallet: 0x627dc5ea4d2e54df9f5d17c37b8e2b0eb9279ae42bb777ca6e944b1f1114827a, extra_nested_data: [["0","0","0"],["7","1","1","1","1"]]
+  - Staked NFTs: ["7","1","1","1","1"]
+  - Unknown NFT type found: 7
+[DOC 12459] Wallet: 0xeea95b47f0582b466f1f14ee69495a21a7eb8ef30ad5225351b65e2f493ed744, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12463] Wallet: 0x2726660e6c72183e30d9c6de2747aa9b825af0e7a24d27adc2dbad4eccbc132f, extra_nested_data: [["1","0","0","0","1","1","1"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12534] Wallet: 0xe96edea13e85b7d8dab9ae4946a90d26746a63829e738ffe574e9454b9da0fd0, extra_nested_data: [["0","0","0"],["11","1","1","1","1"]]
+  - Staked NFTs: ["11","1","1","1","1"]
+  - Unknown NFT type found: 11
+[DOC 12585] Wallet: 0xb3c6c4b40c40de2fbd17269248e094f2a24ecc6dac093d7ded4cd265089392b4, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12594] Wallet: 0xf0b4693648681c4e30ad173af4fa77578243a78057850ff89df220aabe1bb3bc, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 12898] Wallet: 0x0286e661e867e766c390a88e38d80dcd426059efbafcc41796c3f2a1e540cc67, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 12972] Wallet: 0xac65346c713ed4d722ce78273b50db3c486bd24fb6abfd5d61ee194befd866a5, extra_nested_data: [["0","0","0"],["1"]]
+  - Staked NFTs: ["1"]
+[DOC 12973] Wallet: 0x9a53f99621cda3ecaf9ba28acb848c62216e1bfbd3dff207cb8209b28bc33fed, extra_nested_data: [["0","0","0"],["0","0","0","1","1"]]
+  - Staked NFTs: ["0","0","0","1","1"]
+scanned 13000/13863 documents (93.77%)...
+processing batch 14 (documents 13001-13863)...
+[DOC 13238] Wallet: 0x5be28d5765106fc18f4bd717c0b7c04dad1e2024db361c073e833a034a2f7b8a, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 13247] Wallet: 0xda6c90cb356a41d0876a15a2d1ecdfd24909c4290137dba6f35a200e196dc2a4, extra_nested_data: [["0","0","0"],["2"]]
+  - Staked NFTs: ["2"]
+[DOC 13303] Wallet: 0xceacb45701f2554892b2b04300a142368e623fe10ccfc4ebf6d790d6a31c7527, extra_nested_data: [["0","0","0"],["0","1"]]
+  - Staked NFTs: ["0","1"]
+[DOC 13784] Wallet: 0x8fac733c2bf9062ccbb543072b980aeffa6dacd5a6b8adeb49da26745173c7f0, extra_nested_data: [["0","0","0"],["3"]]
+  - Staked NFTs: ["3"]
+
+=== DATABASE SCAN SUMMARY ===
+Total documents in database: 13863
+Documents scanned: 13863
+Documents with nftData: 3703
+Documents with extra_nested_data: 3703
+Documents with extra_nested_data length=1: 3548
+Documents with extra_nested_data length=2: 155
+Documents with extra_nested_data length>2: 0
+Documents with valid staked NFTs: 148
+
+=== STAKED SITIZENS COUNTS ===
+Type 0 (Sivilian): 98
+Type 1 (General): 146
+Type 2 (Officer): 43
+Type 3 (Clown): 19
+Type 4 (Engineer): 8
+Type 5 (Legendary): 10
+Valid types total (0-5): 324
+Other types total: 29
+Grand total: 353
+
+=== OTHER NFT TYPES FOUND ===
+Type 7: 9
+Type 6: 8
+Type 9: 2
+Type 12: 2
+Type 14: 2
+Type 11: 1
+Type 13: 1
+Type 17: 1
+Type 20: 1
+Type 21: 1
+Type 32: 1
+
+detailed staked sitizens data saved to staked_sitizens_detailed.json
+mongodb connection closed
