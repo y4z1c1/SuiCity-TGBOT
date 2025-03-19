@@ -349,6 +349,71 @@ async function fetchSityBalance(provider, walletId) {
   }
 }
 
+// Function to count staked Sitizen NFTs by type
+async function countStakedSitizens(collection) {
+  console.log("Counting staked Sitizen NFTs by type...");
+  const pipeline = [
+    {
+      $match: {
+        "nftData.data.content.fields.extra_nested_data.1": { $exists: true },
+      },
+    },
+    {
+      $project: {
+        stakedNfts: "$nftData.data.content.fields.extra_nested_data.1",
+      },
+    },
+  ];
+
+  const users = await collection.aggregate(pipeline).toArray();
+  console.log(`Found ${users.length} users with staked Sitizen NFTs.`);
+
+  // Initialize counters for each type
+  const types = {
+    total: 0,
+    civilian: 0, // index 0
+    general: 0, // index 1
+    officer: 0, // index 2
+    clown: 0, // index 3
+    engineer: 0, // index 4
+    legendary: 0, // index 5
+  };
+
+  // Count NFTs by type
+  for (const user of users) {
+    if (Array.isArray(user.stakedNfts)) {
+      user.stakedNfts.forEach((nftType) => {
+        types.total++;
+        switch (nftType) {
+          case 0:
+            types.civilian++;
+            break;
+          case 1:
+            types.general++;
+            break;
+          case 2:
+            types.officer++;
+            break;
+          case 3:
+            types.clown++;
+            break;
+          case 4:
+            types.engineer++;
+            break;
+          case 5:
+            types.legendary++;
+            break;
+          default:
+            console.log(`Unknown NFT type: ${nftType}`);
+        }
+      });
+    }
+  }
+
+  console.log("Staked Sitizen NFT counts:", types);
+  return types;
+}
+
 function formatBalance(balance) {
   if (balance >= 1e12) return (balance / 1e12).toFixed(2) + "t";
   if (balance >= 1e9) return (balance / 1e9).toFixed(2) + "b";
@@ -451,6 +516,15 @@ Summary Report:
 - Total Population: ${summary.totalPopulation}
 - Total SITY Balance: ${summary.totalSityBalance}
 
+Staked Sitizen NFTs:
+- Total Staked: ${summary.stakedSitizens.total}
+- Civilians: ${summary.stakedSitizens.civilian}
+- Generals: ${summary.stakedSitizens.general}
+- Officers: ${summary.stakedSitizens.officer}
+- Clowns: ${summary.stakedSitizens.clown}
+- Engineers: ${summary.stakedSitizens.engineer}
+- Legendary: ${summary.stakedSitizens.legendary}
+
 Duplicate Wallet Addresses: ${
     summary.duplicateWalletAddresses.join(", ") || "None"
   }
@@ -487,6 +561,15 @@ async function main() {
   let duplicateTelegramIds = [];
   let totalPopulation = 0;
   let totalSityBalance = "";
+  let stakedSitizens = {
+    total: 0,
+    civilian: 0,
+    general: 0,
+    officer: 0,
+    clown: 0,
+    engineer: 0,
+    legendary: 0,
+  };
 
   try {
     console.log("Connecting to MongoDB...");
@@ -559,6 +642,10 @@ async function main() {
       console.log("No duplicate Telegram IDs found.");
     }
 
+    console.log("Counting staked Sitizen NFTs...");
+    stakedSitizens = await countStakedSitizens(collection);
+    console.log(`Total staked Sitizens: ${stakedSitizens.total}`);
+
     console.log("Fetching and storing balances...");
     const balanceResult = await fetchAndStoreBalances(collection, provider);
     totalPopulation = balanceResult.totalPopulation;
@@ -576,6 +663,7 @@ async function main() {
       duplicateTelegramIds,
       totalPopulation,
       totalSityBalance,
+      stakedSitizens,
     };
 
     const endTime = Date.now();
